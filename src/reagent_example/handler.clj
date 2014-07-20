@@ -9,7 +9,8 @@
             [taoensso.timbre :as timbre]
             [taoensso.timbre.appenders.rotor :as rotor]
             [selmer.parser :as parser]
-            [environ.core :refer [env]]))
+            [environ.core :refer [env]]
+            [ring.adapter.jetty :refer [run-jetty]]))
 
 (defroutes app-routes
   (GET "/" [] (layout/render "app.html"))
@@ -59,3 +60,7 @@
            ;; available formats:
            ;; :json :json-kw :yaml :yaml-kw :edn :yaml-in-html
            :formats [:json-kw :edn]))
+
+
+(def web-server (run-jetty (var app)
+                           {:port 8080}))

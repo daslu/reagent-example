@@ -12,7 +12,14 @@
                 [noir-exception "0.2.2"]
                 [org.clojure/clojurescript "0.0-2234"]
                 [reagent "0.4.2"]
-                [cljs-ajax "0.2.6"]]
+                [cljs-ajax "0.2.6"]
+                [ring/ring-jetty-adapter "1.2.0"]
+                [jvmr/bsh "."]
+                [jvmr/jline "2.12"]
+                [jvmr/jvmr "2.11-2.11.1.1"]
+                [jvmr/scala-compiler "2.11.1"]
+                [jvmr/scala-library "2.11.1"]
+                [jvmr/scala-reflect "2.11.1"]]
 
  :repl-options {:init-ns reagent-example.repl}
  :plugins [[lein-ring "0.8.10"]
